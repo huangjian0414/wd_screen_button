@@ -14,6 +14,7 @@ class WDScreenButton {
   static double _dx = 30;
   static double _dy = 100;
   static Widget? _buttonChild;
+  static bool isInit = false;
 
   ///显示/隐藏按钮
   static changeStatus(bool status){
@@ -24,6 +25,9 @@ class WDScreenButton {
   }
   static initConfig(GlobalKey<NavigatorState> globalKey,{double left = 30, double top = 100,
     Widget? buttonChild,WDScreenButtonCallBack? callBack}){
+    if(isInit){
+      return;
+    }
     _callBack = callBack;
     _dx = left;
     _dy = top;
@@ -78,6 +82,7 @@ class WDScreenButton {
     );
     if (_globalKey?.currentState?.overlay != null) {
       _globalKey!.currentState!.overlay!.insert(_overlayEntry!);
+      isInit = true;
     }
   }
 
