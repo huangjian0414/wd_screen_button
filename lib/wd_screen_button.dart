@@ -21,7 +21,7 @@ class WDScreenButton {
   ///显示/隐藏按钮
   static changeStatus(bool status){
     isShow = status;
-    Future.delayed(Duration(milliseconds: 330)).then((value) {
+    Future.delayed(const Duration(milliseconds: 330)).then((value) {
       _overlayEntry?.markNeedsBuild();
     });
   }
@@ -76,9 +76,9 @@ class WDScreenButton {
                       }
                       _overlayEntry?.markNeedsBuild();
                     },
-                    childWhenDragging: SizedBox.shrink(),
-                    feedback: _buttonChild ?? Icon(Icons.pest_control_sharp,size: 40,color: Colors.blueAccent,),
-                    child:_buttonChild ?? Icon(Icons.pest_control_sharp,size: 40,color: Colors.blueAccent)),
+                    childWhenDragging: const SizedBox.shrink(),
+                    feedback: _buttonChild ?? const Icon(Icons.pest_control_sharp,size: 40,color: Colors.blueAccent,),
+                    child:_buttonChild ?? const Icon(Icons.pest_control_sharp,size: 40,color: Colors.blueAccent)),
               )
           ),
         )
